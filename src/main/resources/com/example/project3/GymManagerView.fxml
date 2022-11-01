@@ -8,16 +8,16 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <TabPane prefHeight="600.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+   <TabPane prefHeight="450.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
      <tabs>
        <Tab text="Membership">
          <content>
-           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="560.0">
                   <children>
-                     <GridPane layoutX="63.0" layoutY="56.0" prefHeight="217.0" prefWidth="483.0">
+                     <GridPane layoutX="20.0" layoutY="50.0" prefHeight="220.0" prefWidth="500.0">
                        <columnConstraints>
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="178.0" />
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="305.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="150.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="350.0" />
                        </columnConstraints>
                        <rowConstraints>
                            <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
@@ -33,21 +33,91 @@
                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
                             <Label text="Date of Birth" GridPane.rowIndex="2" />
                            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <Label text="Location" GridPane.rowIndex="3" />
+                           <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           <Label text="Membership Type" GridPane.rowIndex="4" />
+                           <ButtonBar buttonMinWidth="100.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <buttons>
+                                 <RadioButton mnemonicParsing="false" selected="true" text="Standard">
+                                    <toggleGroup>
+                                       <ToggleGroup fx:id="membership" />
+                                    </toggleGroup>
+                                 </RadioButton>
+                                 <RadioButton mnemonicParsing="false" text="Family" toggleGroup="$membership" />
+                                 <RadioButton mnemonicParsing="false" text="Premium" toggleGroup="$membership" />
+                              </buttons>
+                           </ButtonBar>
                         </children>
                      </GridPane>
+                     <Button layoutX="204.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Add" textAlignment="CENTER" />
+                     <Button layoutX="321.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Remove" textAlignment="CENTER" />
                   </children></AnchorPane>
          </content>
        </Tab>
        <Tab text="Fitness Class">
          <content>
-           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="560.0">
+                 <children>
+                     <GridPane layoutX="20.0" layoutY="50.0" prefHeight="220.0" prefWidth="500.0">
+                       <columnConstraints>
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="137.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="346.0" />
+                       </columnConstraints>
+                       <rowConstraints>
+                           <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                           <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                           <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                           <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                           <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                       </rowConstraints>
+                       <children>
+                           <Label text="First Name" GridPane.rowIndex="0" />
+                           <TextField GridPane.columnIndex="1" />
+                           <Label text="Last Name" GridPane.rowIndex="1" />
+                           <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           <Label text="Date of Birth" GridPane.rowIndex="2" />
+                           <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <Label text="Fitness Class" GridPane.rowIndex="3" />
+                           <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           <CheckBox mnemonicParsing="false" text="Guest" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                       </children>
+                   </GridPane>
+                   <Button layoutX="204.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Check In" textAlignment="CENTER" />
+                   <Button layoutX="321.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Drop" textAlignment="CENTER" />
+               </children>
+           </AnchorPane>
          </content>
        </Tab>
         <Tab text="Information Hub">
          <content>
-             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <MenuBar fx:id="menuBar" layoutX="110.0" layoutY="48.0">
+                         <Menu text="Member Database">
+                             <items>
+                                 <MenuItem text="Print" />
+                                 <MenuItem text="Print by County/Zipcode" />
+                                 <MenuItem text="Print by Last/First Names" />
+                                 <MenuItem text="Print by Expiration Date" />
+                                 <MenuItem text="Load Member List From File" />
+                             </items>
+                         </Menu>
+                         <Menu text="Class Schedule">
+                             <items>
+                                 <MenuItem text="Show All Classes" />
+                                 <MenuItem text="Load Member List From File" />
+                             </items>
+                         </Menu>
+                         <Menu text="Membership Fee">
+                             <items>
+                                 <MenuItem text="First bill" />
+                                 <MenuItem text="Next bill" />
+                             </items>
+                         </Menu>
+                     </MenuBar>
+             </AnchorPane>
          </content>
         </Tab>
      </tabs>
    </TabPane>
+   <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" />
 </VBox>
