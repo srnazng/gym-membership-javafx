@@ -3,8 +3,8 @@ package com.example.project3;
 import java.io.File;
 import java.util.Scanner;
 
-import static models.Constants.NOT_FOUND;
-import static models.Constants.decimalFormat;
+import static com.example.project3.Constants.NOT_FOUND;
+import static com.example.project3.Constants.decimalFormat;
 
 /**
  * The MemberDatabase class contains a list of all the members of the gym,
