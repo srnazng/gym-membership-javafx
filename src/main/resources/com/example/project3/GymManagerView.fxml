@@ -28,13 +28,13 @@
                        </rowConstraints>
                         <children>
                             <Label text="First Name" GridPane.rowIndex="0" />
-                           <TextField GridPane.columnIndex="1" fx:id="membership_fname"/>
+                           <TextField fx:id="membership_fname" GridPane.columnIndex="1" />
                            <Label text="Last Name" GridPane.rowIndex="1" />
-                           <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="membership_lname"/>
+                           <TextField fx:id="membership_lname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                             <Label text="Date of Birth" GridPane.rowIndex="2" />
-                           <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="membership_dob"/>
+                           <DatePicker fx:id="membership_dob" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            <Label text="Location" GridPane.rowIndex="3" />
-                           <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="membership_loc"/>
+                           <ComboBox fx:id="membership_loc" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            <Label text="Membership Type" GridPane.rowIndex="4" />
                            <ButtonBar buttonMinWidth="100.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                               <buttons>
@@ -49,7 +49,7 @@
                            </ButtonBar>
                         </children>
                      </GridPane>
-                     <Button layoutX="204.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Add" textAlignment="CENTER" onAction="#onAddMembershipClick"/>
+                     <Button layoutX="204.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" onAction="#onAddMembershipClick" text="Add" textAlignment="CENTER" />
                      <Button layoutX="321.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Remove" textAlignment="CENTER" />
                   </children></AnchorPane>
          </content>
@@ -94,17 +94,18 @@
                      <MenuBar fx:id="menuBar" layoutX="110.0" layoutY="48.0">
                          <Menu text="Member Database">
                              <items>
-                                 <MenuItem text="Print" />
-                                 <MenuItem text="Print by County/Zipcode" />
-                                 <MenuItem text="Print by Last/First Names" />
-                                 <MenuItem text="Print by Expiration Date" />
-                                 <MenuItem text="Load Member List From File" />
+                                 <MenuItem text="Print without fees" onAction = "#printMembers"/>
+                                 <MenuItem text="Print with fees" onAction = "#printMembersWithFees"/>
+                                 <MenuItem text="Print by County/Zipcode" onAction = "#printMembersByLocation"/>
+                                 <MenuItem text="Print by Last/First Names" onAction = "#printMembersByName"/>
+                                 <MenuItem text="Print by Expiration Date" onAction = "#printMembersByExpiration"/>
+                                 <MenuItem onAction="#loadMemberList" text="Load Member List From File" />
                              </items>
                          </Menu>
                          <Menu text="Class Schedule">
                              <items>
-                                 <MenuItem text="Show All Classes" />
-                                 <MenuItem text="Load Member List From File" />
+                                 <MenuItem text="Show All Classes" onAction = "#printClasses"/>
+                                 <MenuItem onAction="#loadClassList" text="Load Class List From File" />
                              </items>
                          </Menu>
                          <Menu text="Membership Fee">
@@ -119,5 +120,5 @@
         </Tab>
      </tabs>
    </TabPane>
-   <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" />
+   <TextArea fx:id="messageArea" editable="false" prefHeight="200.0" prefWidth="200.0" />
 </VBox>

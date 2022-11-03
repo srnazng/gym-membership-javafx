@@ -25,26 +25,29 @@ public class ClassSchedule {
     }
 
     /**
-     * Print schedule and format with header and footer
+     * Return string representing schedule and format with header and footer
+     * @return string representing schedule
      */
-    public void printSchedule(){
+    public String printSchedule(){
         if(numClasses > 0 && classes != null){
-            System.out.println("\n-Fitness classes-");
-            printClasses();
-            System.out.println("-end of class list.\n");
+            return "\n-Fitness classes-\n" + printClasses()
+                    + "-end of class list.\n\n";
         }
         else{
-            System.out.println("Fitness class schedule is empty.");
+            return "Fitness class schedule is empty.\n";
         }
     }
 
     /**
-     * Print all the classes in the schedule
+     * Gets string representing all classes in the schedule
+     * @return
      */
-    public void printClasses(){
+    public String printClasses(){
+        String returnString = "";
         for(int i = 0; i < classes.length; i++){
-            System.out.print(classes[i]);
+            returnString += classes[i];
         }
+        return returnString;
     }
 
     /**
@@ -144,6 +147,7 @@ public class ClassSchedule {
             File file  = new File("src/input/classSchedule.txt");
             Scanner sc = new Scanner(file);
 
+            numClasses = 0;
             while (sc.hasNextLine()){
                 String s = sc.nextLine();
                 if(!s.isBlank()) {
@@ -165,10 +169,6 @@ public class ClassSchedule {
                 }
             }
             sc.close();
-
-            System.out.println("\n-Fitness classes loaded-");
-            printClasses();
-            System.out.println("-end of class list.\n");
         }
         catch(Exception e){
             e.printStackTrace();

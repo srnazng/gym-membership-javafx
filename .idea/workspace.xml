@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="UI skeleton">
+    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/input/classSchedule.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/input/memberList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/ClassSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/ClassSchedule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/MemberDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/MemberDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,18 +31,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/serena/IdeaProjects/project3/src/main/java/com/example/project3&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Jackson/IdeaProjects/gym-membership-javafx/src/input"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/com/example/project3" />
+      <recent name="C:\Users\Jackson\IdeaProjects\gym-membership-javafx\src\input" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GymManagerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.project3.GymManagerMain" />
+      <module name="gym-membership-javafx" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.project3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GymManagerMain" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,28 +72,6 @@
       <option name="presentableId" value="Default" />
       <updated>1667333637136</updated>
     </task>
-    <task id="LOCAL-00001" summary="init">
-      <created>1667334776998</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1667334776998</updated>
-    </task>
-    <task id="LOCAL-00002" summary="set up design">
-      <created>1667336337350</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1667336337350</updated>
-    </task>
-    <task id="LOCAL-00003" summary="UI skeleton">
-      <created>1667344138051</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1667344138051</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -83,11 +84,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
-    <MESSAGE value="set up design" />
-    <MESSAGE value="UI skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI skeleton" />
   </component>
 </project>

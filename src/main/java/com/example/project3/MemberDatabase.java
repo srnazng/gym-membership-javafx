@@ -84,55 +84,55 @@ public class MemberDatabase {
 
     /**
      * If there are no members, a message indicating database is empty is printed.
-     * Otherwise, a list of members is printed without sorting.
+     * Otherwise, a list of members, without their fees, is returned without sorting.
+     * @return string representing list of members
      */
-    public void printDefault() {
+    public String printDefault() {
         if(size < 1){
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!\n";
         }
-        System.out.println("\n-list of members-");
-        print(false);
-        System.out.println("-end of list-\n");
+        return "\n-list of members-\n"
+                + print(false) + "-end of list-\n\n";
     }
 
     /**
      * If there are no members, a message indicating database is empty is printed.
-     * Otherwise, a list of members and their fees is printed without sorting.
+     * Otherwise, a list of members and their fees is returned without sorting.
+     * @return string representing list of members
      */
-    public void printWithFees() {
+    public String printWithFees() {
         if(size < 1){
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!\n";
         }
-
-        System.out.println("\n-list of members with membership fees-");
-        print(true);
-        System.out.println("-end of list-\n");
+        return "\n-list of members with membership fees-\n"
+                + print(true) + "-end of list-\n\n";
     }
 
     /**
      * Print the members in the database (without headers)
-     * @param includeFees   whether or not to include the fees
+     * @param includeFees whether or not to include the fees
+     * @return string representing list of members
      */
-    private void print(boolean includeFees){
+    private String print(boolean includeFees){
+        String returnString = "";
         for (int i = 0; i < size; i++){
             String memberInfo = mlist[i].toString();
             if(includeFees){
                 memberInfo = memberInfo + ", Membership fee: $" + decimalFormat.format(mlist[i].membershipFee());
             }
-            System.out.println(memberInfo);
+            returnString += memberInfo + "\n";
         }
+        return returnString;
     }
 
     /**
      * If there are no members, a message indicating database is empty is printed.
      * Otherwise, print the list of members sorted in place by county, then zip code.
+     * @return string representing list of members sorted by location
      */
-    public void printByLocation() {
+    public String printByLocation() {
         if(size < 1){
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!\n";
         }
         for (int i = 0; i < size - 1; i++){
             for (int j = 0; j < size - 1 - i; j++){
@@ -145,21 +145,22 @@ public class MemberDatabase {
             }
         }
 
-        System.out.println("\n-list of members sorted by county and zipcode-");
+        String returnString = "\n-list of members sorted by county and zipcode-\n";
         for (int i = 0; i < size; i++){
-            System.out.println(mlist[i]);
+            returnString += mlist[i] + "\n";
         }
-        System.out.println("-end of list-\n");
+        returnString += "-end of list-\n\n";
+        return returnString;
     }
 
     /**
      * If there are no members, a message indicating database is empty is printed.
-     * Otherwise, print the list of members sorted in place by expiration date of membership.
+     * Otherwise, print the list of members sorted in place by expiration date
+     * @return string representing list of members sorted by epiration date
      */
-    public void printByExpirationDate() {
+    public String printByExpirationDate() {
         if(size < 1){
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!\n";
         }
         for (int i = 0; i < size - 1; i++){
             for (int j = 0; j < size - 1 - i; j++){
@@ -171,21 +172,23 @@ public class MemberDatabase {
                 }
             }
         }
-        System.out.println("\n-list of members sorted by membership expiration date-");
+
+        String returnString = "\n-list of members sorted by membership expiration date-\n";
         for (int i = 0; i < size; i++){
-            System.out.println(mlist[i]);
+            returnString += mlist[i] + "\n";
         }
-        System.out.println("-end of list-\n");
+        returnString += "-end of list-\n";
+        return returnString;
     }
 
     /**
      * If there are no members, a message indicating database is empty is printed.
-     * Otherwise, print the list of members sorted in place by last name, then first name.
+     * Otherwise, print the list of members sorted in place last name, then by first name
+     * @return string representing list of members sorted by last name, then by first name
      */
-    public void printByName() {
+    public String printByName() {
         if(size < 1){
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!\n";
         }
         for (int i = 0; i < size - 1; i++){
             for (int j = 0; j < size - 1 - i; j++){
@@ -197,11 +200,12 @@ public class MemberDatabase {
                 }
             }
         }
-        System.out.println("\n-list of members sorted by last name, and first name-");
+        String returnString = "\n-list of members sorted by last name, and first name-\n";
         for (int i = 0; i < size; i++){
-            System.out.println(mlist[i]);
+            returnString += mlist[i] + "\n";
         }
-        System.out.println("-end of list-\n");
+        returnString += "-end of list-\n";
+        return returnString;
     }
 
     /**
@@ -237,6 +241,7 @@ public class MemberDatabase {
             File file = new File("src/input/memberList.txt");
             Scanner sc = new Scanner(file);
 
+            size = 0;
             while (sc.hasNextLine()){
                 String s = sc.nextLine();
                 if(!s.isBlank()) {
@@ -258,10 +263,6 @@ public class MemberDatabase {
                 }
             }
             sc.close();
-
-            System.out.println("\n-list of members loaded-");
-            print(false);
-            System.out.println("-end of list-\n");
         } catch (Exception e) {
             e.printStackTrace();
         }
