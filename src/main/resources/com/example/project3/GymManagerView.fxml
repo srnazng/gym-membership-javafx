@@ -32,9 +32,9 @@
                            <Label text="Last Name" GridPane.rowIndex="1" />
                            <TextField fx:id="membership_lname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                             <Label text="Date of Birth" GridPane.rowIndex="2" />
-                           <DatePicker fx:id="membership_dob" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <DatePicker fx:id="membership_dob" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            <Label text="Location" GridPane.rowIndex="3" />
-                           <ComboBox fx:id="membership_loc" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           <ComboBox fx:id="membership_loc" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            <Label text="Membership Type" GridPane.rowIndex="4" />
                            <ButtonBar buttonMinWidth="100.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                               <buttons>
@@ -50,7 +50,7 @@
                         </children>
                      </GridPane>
                      <Button layoutX="204.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" onAction="#onAddMembershipClick" text="Add" textAlignment="CENTER" />
-                     <Button layoutX="321.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Remove" textAlignment="CENTER" />
+                     <Button layoutX="321.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" onAction="#onRemoveMembershipClick" text="Remove" textAlignment="CENTER" />
                   </children></AnchorPane>
          </content>
        </Tab>
@@ -72,17 +72,17 @@
                        </rowConstraints>
                        <children>
                            <Label text="First Name" GridPane.rowIndex="0" />
-                           <TextField GridPane.columnIndex="1" />
+                           <TextField fx:id="fitclass_fname" GridPane.columnIndex="1" />
                            <Label text="Last Name" GridPane.rowIndex="1" />
-                           <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           <TextField fx:id="fitclass_lname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            <Label text="Date of Birth" GridPane.rowIndex="2" />
-                           <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <DatePicker fx:id="fitclass_dob" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            <Label text="Fitness Class" GridPane.rowIndex="3" />
-                           <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           <ComboBox fx:id="fitclass_classes" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            <CheckBox mnemonicParsing="false" text="Guest" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                        </children>
                    </GridPane>
-                   <Button layoutX="204.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Check In" textAlignment="CENTER" />
+                   <Button layoutX="204.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" onAction="#checkInClass" text="Check In" textAlignment="CENTER" />
                    <Button layoutX="321.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Drop" textAlignment="CENTER" />
                </children>
            </AnchorPane>
@@ -94,23 +94,22 @@
                      <MenuBar fx:id="menuBar" layoutX="110.0" layoutY="48.0">
                          <Menu text="Member Database">
                              <items>
-                                 <MenuItem text="Print without fees" onAction = "#printMembers"/>
-                                 <MenuItem text="Print with fees" onAction = "#printMembersWithFees"/>
-                                 <MenuItem text="Print by County/Zipcode" onAction = "#printMembersByLocation"/>
-                                 <MenuItem text="Print by Last/First Names" onAction = "#printMembersByName"/>
-                                 <MenuItem text="Print by Expiration Date" onAction = "#printMembersByExpiration"/>
+                                 <MenuItem onAction="#printMembers" text="Print" />
+                                 <MenuItem onAction="#printMembersByLocation" text="Print by County/Zipcode" />
+                                 <MenuItem onAction="#printMembersByName" text="Print by Last/First Names" />
+                                 <MenuItem onAction="#printMembersByExpiration" text="Print by Expiration Date" />
                                  <MenuItem onAction="#loadMemberList" text="Load Member List From File" />
                              </items>
                          </Menu>
                          <Menu text="Class Schedule">
                              <items>
-                                 <MenuItem text="Show All Classes" onAction = "#printClasses"/>
+                                 <MenuItem onAction="#printClasses" text="Show All Classes" />
                                  <MenuItem onAction="#loadClassList" text="Load Class List From File" />
                              </items>
                          </Menu>
                          <Menu text="Membership Fee">
                              <items>
-                                 <MenuItem text="First bill" />
+                                 <MenuItem onAction="#printMembersWithFees" text="First bill" />
                                  <MenuItem text="Next bill" />
                              </items>
                          </Menu>

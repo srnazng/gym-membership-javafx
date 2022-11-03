@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/input/classSchedule.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input/memberList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/ClassSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/ClassSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/MemberDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/MemberDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Plans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Plan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" afterDir="false" />
+    </list>
+    <list id="4a2919e5-70c2-462c-a64d-d63ba2dee581" name="Changes by Jackson" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +27,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml">
+      <ranges>
+        <range start1="34" end1="35" start2="34" end2="35" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+        <range start1="36" end1="37" start2="36" end2="37" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+        <range start1="52" end1="53" start2="52" end2="53" changelist="4a2919e5-70c2-462c-a64d-d63ba2dee581" />
+        <range start1="74" end1="75" start2="74" end2="75" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+        <range start1="76" end1="77" start2="76" end2="77" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+        <range start1="78" end1="79" start2="78" end2="79" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+        <range start1="80" end1="81" start2="80" end2="81" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+        <range start1="84" end1="85" start2="84" end2="85" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+        <range start1="96" end1="101" start2="96" end2="100" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+        <range start1="106" end1="107" start2="105" end2="106" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+        <range start1="112" end1="113" start2="111" end2="112" changelist="6bd10dba-8b84-4155-bb88-544b604acc43" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -31,13 +53,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Jackson/IdeaProjects/gym-membership-javafx/src/input"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jackson/IdeaProjects/gym-membership-javafx/src/input&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jackson\IdeaProjects\gym-membership-javafx\src\input" />
@@ -46,7 +68,7 @@
   <component name="RunManager">
     <configuration name="GymManagerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.project3.GymManagerMain" />
-      <module name="gym-membership-javafx" />
+      <module name="project3" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.project3.*" />

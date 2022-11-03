@@ -11,9 +11,9 @@ public class Date implements Comparable<Date> {
     private int month; // 1 to 12
     private int day;
 
-    private static final int MONTH_INDEX = 1;
-    private static final int DAY_INDEX = 2;
-    private static final int YEAR_INDEX = 0;
+    private static final int INDEX_0 = 0;
+    private static final int INDEX_1 = 1;
+    private static final int INDEX_2 = 2;
     private static final int DATE_NUM_PARTS = 3;
 
     /**
@@ -60,13 +60,30 @@ public class Date implements Comparable<Date> {
      * @param date String containing year, month, and day of new Date
      */
     public Date(String date) {
-        String[] dateParts = date.split("-", 0);
+        String[] dateParts = date.split("/", 0);
         if (dateParts.length < DATE_NUM_PARTS) {
             return;
         }
-        this.month = Integer.parseInt(dateParts[MONTH_INDEX]);
-        this.day = Integer.parseInt(dateParts[DAY_INDEX]);
-        this.year = Integer.parseInt(dateParts[YEAR_INDEX]);
+        this.month = Integer.parseInt(dateParts[INDEX_0]);
+        this.day = Integer.parseInt(dateParts[INDEX_1]);
+        this.year = Integer.parseInt(dateParts[INDEX_2]);
+    }
+
+    public Date(String date, String delimiter) {
+        String[] dateParts = date.split(delimiter, 0);
+        if (dateParts.length < DATE_NUM_PARTS) {
+            return;
+        }
+        if(delimiter.equalsIgnoreCase("-")){
+            this.month = Integer.parseInt(dateParts[INDEX_1]);
+            this.day = Integer.parseInt(dateParts[INDEX_2]);
+            this.year = Integer.parseInt(dateParts[INDEX_0]);
+        }
+        else{
+            this.month = Integer.parseInt(dateParts[INDEX_0]);
+            this.day = Integer.parseInt(dateParts[INDEX_1]);
+            this.year = Integer.parseInt(dateParts[INDEX_2]);
+        }
     }
 
     /**

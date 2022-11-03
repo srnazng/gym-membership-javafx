@@ -1,5 +1,7 @@
 package com.example.project3;
 
+import javafx.collections.ObservableArray;
+
 /**
  * The Location enum defines the locations of the gym. A location
  * consists of the city, zip code, and county.

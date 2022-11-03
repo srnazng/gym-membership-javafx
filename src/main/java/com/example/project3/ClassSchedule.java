@@ -123,6 +123,10 @@ public class ClassSchedule {
         return classList;
     }
 
+    public FitnessClass[] getClassList(){
+        return classes;
+    }
+
     /**
      * Get the number of fitness classes in schedule at specified time
      * @param time  time of fitness classes

@@ -64,9 +64,9 @@ public class GymManager {
         if(command.trim().length() == 0) { return; }
         if(command.equals("LS")) { schedule.loadSchedule(); }
         else if(command.equals("LM")) { database.loadMembers(); }
-        else if(command.equals("A")) { handleAddMember(line, Plans.STANDARD); }
-        else if(command.equals("AF")) { handleAddMember(line, Plans.FAMILY); }
-        else if(command.equals("AP")) { handleAddMember(line, Plans.PREMIUM); }
+        else if(command.equals("A")) { handleAddMember(line, Plan.STANDARD); }
+        else if(command.equals("AF")) { handleAddMember(line, Plan.FAMILY); }
+        else if(command.equals("AP")) { handleAddMember(line, Plan.PREMIUM); }
         else if(command.equals("PF")) { database.printWithFees(); }
         else if(command.equals("C")) { handleCheckIn(line, false); }
         else if(command.equals("CG")) { handleCheckIn(line, true); }
@@ -89,7 +89,7 @@ public class GymManager {
      * @param membershipType    Standard, Family, or Premium plan of member
      * @return true if member successfully added, false otherwise
      */
-    private boolean handleAddMember(String command, Plans membershipType){
+    private boolean handleAddMember(String command, Plan membershipType){
         String[] parts = command.split(" ");
         if(parts.length < A_COMMAND_LENGTH) return false;
 
@@ -105,8 +105,8 @@ public class GymManager {
             return false;
         }
         Member member;
-        if(membershipType == Plans.PREMIUM){ member = new Premium(parts[ARG_1], parts[ARG_2], dob, location); }
-        else if(membershipType == Plans.FAMILY){ member = new Family(parts[ARG_1], parts[ARG_2], dob, location); }
+        if(membershipType == Plan.PREMIUM){ member = new Premium(parts[ARG_1], parts[ARG_2], dob, location); }
+        else if(membershipType == Plan.FAMILY){ member = new Family(parts[ARG_1], parts[ARG_2], dob, location); }
         else{ member = new Member(parts[ARG_1], parts[ARG_2], dob, location); }
         if(database.contains(member)) {
             System.out.println(parts[ARG_1] + " " + parts[ARG_2] + " is already in the database.");

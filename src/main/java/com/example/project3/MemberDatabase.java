@@ -28,6 +28,7 @@ public class MemberDatabase {
      */
     public MemberDatabase(){
         size = 0;
+        mlist = new Member[GROWTH_FACTOR];
     }
 
     /**
@@ -241,31 +242,29 @@ public class MemberDatabase {
             File file = new File("src/input/memberList.txt");
             Scanner sc = new Scanner(file);
 
-            size = 0;
+            int num_members = 0;
             while (sc.hasNextLine()){
                 String s = sc.nextLine();
                 if(!s.isBlank()) {
-                    size++;
+                    num_members++;
                 }
             }
             sc.close();
             sc = new Scanner(file);
-            mlist = new Member[size + GROWTH_FACTOR];
 
-            for (int i = 0; i < size; i++){
+            for (int i = 0; i < num_members; i++){
                 String memberString = sc.nextLine();
                 String[] memberParts = memberString.split("\\s+");
                 if(memberParts.length == NUM_ARGS){
                     Member member = new Member(memberParts[FNAME_INDEX], memberParts[LNAME_INDEX],
                             new Date(memberParts[DOB_INDEX]), new Date(memberParts[EXP_INDEX]),
                             Location.toLocation(memberParts[CITY_INDEX]));
-                    mlist[i] = member;
+                    add(member);
                 }
             }
             sc.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

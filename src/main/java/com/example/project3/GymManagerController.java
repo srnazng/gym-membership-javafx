@@ -1,42 +1,89 @@
 package com.example.project3;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 
-public class GymManagerController {
+import static com.example.project3.Location.*;
+
+public class GymManagerController{
     @FXML
-    private TextField membership_fname, membership_lname;
+    private TextField membership_fname, membership_lname, fitclass_fname, fitclass_lname;
 
     @FXML
-    private DatePicker membership_dob;
+    private DatePicker membership_dob, fitclass_dob;
 
     @FXML
-    private ComboBox membership_loc;
+    private ComboBox membership_loc, fitclass_classes;
 
     @FXML
     private TextArea messageArea;
 
+    @FXML
+    private ToggleGroup membership;
+
     private static MemberDatabase database;
 
     private static ClassSchedule schedule;
-
-
-    @FXML
-    public void initialize(){
-        database = new MemberDatabase();
-        schedule = new ClassSchedule();
-    }
+    private static String[] locationList;
+    private static String[] classList;
 
     @FXML
     void onAddMembershipClick(ActionEvent event) {
         String fname = membership_fname.getText();
         String lname = membership_lname.getText();
-        Date dob = new Date(membership_dob.getValue().toString());
 
+        if(fname.isEmpty() || lname.isEmpty() || membership_dob.getValue() == null){
+            messageArea.appendText("Field cannot be empty.\n");
+            return;
+        }
+
+        if(membership_loc.getValue() == null){
+            messageArea.appendText("Invalid location.\n");
+            return;
+        }
+
+        Date dob = new Date(membership_dob.getValue().toString(), "-");
+        Location loc = toLocation(membership_loc.getValue().toString());
+        Plan membershipType = Plan.toPlan(membership.selectedToggleProperty()
+                .getValue().toString().split("'")[1]);
+
+        String error = checkBirthdayErrors(dob);
+        if(error != null){
+            messageArea.appendText(error);
+            return;
+        }
+
+        Member member;
+        if(membershipType == Plan.PREMIUM){ member = new Premium(fname, lname, dob, loc); }
+        else if(membershipType == Plan.FAMILY){ member = new Family(fname, lname, dob, loc); }
+        else{ member = new Member(fname, lname, dob, loc); }
+
+        if(database.contains(member)) {
+            messageArea.appendText(member.getFname() + " " + member.getLname() + " is already in the database.\n");
+            return;
+        }
+        if(database.add(member)){
+            messageArea.appendText(member.getFname() + " " + member.getLname() + " added.");
+            membership_fname.setText("");
+            membership_lname.setText("");
+            membership_dob.setValue(null);
+            membership_loc.setValue(null);
+        }
+    }
+
+    @FXML
+    void checkInClass(){
+        String fname = fitclass_fname.getText();
+        String lname = fitclass_lname.getText();
+
+        if(fname.isEmpty() || lname.isEmpty() || fitclass_dob.getValue() == null){
+            messageArea.appendText("Field cannot be empty.\n");
+            return;
+        }
+
+        FitnessClass fitClass;
     }
 
     @FXML
@@ -47,6 +94,7 @@ public class GymManagerController {
     @FXML
     void loadClassList(ActionEvent event){
         schedule.loadSchedule();
+        updateClassInput();
     }
 
     @FXML
@@ -78,4 +126,89 @@ public class GymManagerController {
     void printClasses(ActionEvent event){
         messageArea.appendText(schedule.printSchedule());
     }
+
+    /**
+     * Return error message if invalid birthday
+     * @param dob   Date object of birthday
+     * @return Error message if dob invalid, null otherwise
+     */
+    private String checkBirthdayErrors(Date dob) {
+        if (!dob.isValid()) {
+            return "DOB " + dob + ": invalid calendar date!\n";
+        }
+        if (!dob.isPast()) {
+            return "DOB " + dob + ": cannot be today or a future date!\n";
+        }
+        if (!dob.isEighteen()) {
+            return "DOB " + dob + ": must be 18 or older to join!\n";
+        }
+        return null;
+    }
+
+//    private boolean handleCancelMembership(String command){
+//        String[] parts = command.split(" ");
+//        if(parts.length < R_COMMAND_LENGTH) return false;
+//        if(database.remove(new Member(parts[ARG_1], parts[ARG_2], new Date(parts[ARG_3])))){
+//            System.out.println(parts[ARG_1] + " " + parts[ARG_2] + " removed.");
+//        }
+//        else{
+//            System.out.println(parts[ARG_1] + " " + parts[ARG_2] + " is not in the database.");
+//        }
+//        return true
+//                }
+    @FXML
+    void onRemoveMembershipClick(ActionEvent event){
+        String fname = membership_fname.getText();
+        String lname = membership_lname.getText();
+
+        if(fname.isEmpty() || lname.isEmpty() || membership_dob.getValue() == null){
+            messageArea.appendText("Field cannot be empty.\n");
+            return;
+        }
+
+        Date dob = new Date(membership_dob.getValue().toString(), "-");
+
+        String error = checkBirthdayErrors(dob);
+        if(error != null){
+            messageArea.appendText(error);
+            return;
+        }
+        Member member = new Member(fname, lname, dob);
+        if (member != null){
+            if (database.remove(member)){
+                messageArea.appendText(member.getFname() + " " + member.getLname() + " removed.\n");
+                membership_fname.setText("");
+                membership_lname.setText("");
+                membership_dob.setValue(null);
+                membership_loc.setValue(null);
+            }
+            else{
+                messageArea.appendText(member.getFname() + " " + member.getLname() + " is not in the database.\n");
+            }
+        }
+    }
+
+    @FXML
+    public void initialize() {
+        database = new MemberDatabase();
+        schedule = new ClassSchedule();
+
+        locationList = new String[]{BRIDGEWATER.name(), EDISON.name(),
+                FRANKLIN.name(), PISCATAWAY.name(), SOMERVILLE.name()};
+        membership_loc.setItems(FXCollections.observableArrayList(locationList));
+        updateClassInput();
+    }
+
+    public void updateClassInput(){
+        FitnessClass[] classes = schedule.getClassList();
+        if(classes != null){
+            classList = new String[classes.length];
+            for(int i=0; i<classes.length; i++){
+                classList[i] = classes[i].toString();
+            }
+            fitclass_classes.setItems(FXCollections.observableArrayList(classList));
+        }
+    }
+
+
 }
