@@ -79,7 +79,7 @@
                            <DatePicker fx:id="fitclass_dob" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            <Label text="Fitness Class" GridPane.rowIndex="3" />
                            <ComboBox fx:id="fitclass_classes" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                           <CheckBox mnemonicParsing="false" text="Guest" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           <CheckBox fx:id="fitclass_is_guest" mnemonicParsing="false" text="Guest" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                        </children>
                    </GridPane>
                    <Button layoutX="204.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" onAction="#checkInClass" text="Check In" textAlignment="CENTER" />

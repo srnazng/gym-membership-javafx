@@ -10,21 +10,17 @@ import static com.example.project3.Location.*;
 public class GymManagerController{
     @FXML
     private TextField membership_fname, membership_lname, fitclass_fname, fitclass_lname;
-
     @FXML
     private DatePicker membership_dob, fitclass_dob;
-
     @FXML
     private ComboBox membership_loc, fitclass_classes;
-
+    @FXML
+    private CheckBox fitclass_is_guest;
     @FXML
     private TextArea messageArea;
-
     @FXML
     private ToggleGroup membership;
-
     private static MemberDatabase database;
-
     private static ClassSchedule schedule;
     private static String[] locationList;
     private static String[] classList;
@@ -77,13 +73,41 @@ public class GymManagerController{
     void checkInClass(){
         String fname = fitclass_fname.getText();
         String lname = fitclass_lname.getText();
-
         if(fname.isEmpty() || lname.isEmpty() || fitclass_dob.getValue() == null){
             messageArea.appendText("Field cannot be empty.\n");
             return;
         }
+        Date dob = new Date(fitclass_dob.getValue().toString(), "-");
+        if(!dob.isValid()) {
+            messageArea.appendText("DOB " + dob + ": invalid calendar date!\n");
+            return;
+        }
+        FitnessClass fitclass = schedule.toClass(fitclass_classes.getValue().toString());
+        if(fitclass == null){
+            messageArea.appendText("Class does not exist\n");
+            return;
+        }
+        Member member = database.getMember(new Member(fname, lname, dob));
+        if (member == null) {
+            messageArea.appendText(fname + " " + lname + " " + dob + " is not in the database.\n");
+            return;
+        }
+        if (member.getExpire().isPast()) {
+            messageArea.appendText(fname + " " + lname + " " + dob + " membership expired.");
+            return;
+        }
+        boolean isGuest = fitclass_is_guest.isSelected();
 
-        FitnessClass fitClass;
+        String message;
+        if (isGuest) message = fitclass.addGuest(member);
+        else message = fitclass.add(member);
+
+        messageArea.appendText(message);
+
+        if (fitclass.getLastAddSuccessful()){
+            messageArea.appendText(fitclass.getClassMemberList());
+            messageArea.appendText(fitclass.getClassGuestList());
+        }
     }
 
     @FXML
@@ -145,17 +169,6 @@ public class GymManagerController{
         return null;
     }
 
-//    private boolean handleCancelMembership(String command){
-//        String[] parts = command.split(" ");
-//        if(parts.length < R_COMMAND_LENGTH) return false;
-//        if(database.remove(new Member(parts[ARG_1], parts[ARG_2], new Date(parts[ARG_3])))){
-//            System.out.println(parts[ARG_1] + " " + parts[ARG_2] + " removed.");
-//        }
-//        else{
-//            System.out.println(parts[ARG_1] + " " + parts[ARG_2] + " is not in the database.");
-//        }
-//        return true
-//                }
     @FXML
     void onRemoveMembershipClick(ActionEvent event){
         String fname = membership_fname.getText();

@@ -111,6 +111,11 @@ public class FitnessClass {
         return toReturn + "\n";
     }
 
+    public String toSimpleString(){
+        return name.toUpperCase() + " - " + instructor.toUpperCase() + ", " + time.getTime()
+                + ", " + location.name().toUpperCase() + "\n";
+    }
+
     /**
      * Gets a list of Members (as Strings) who are checked into the fitness class
      * @return  List of participants of the class, empty string if no participants
@@ -193,6 +198,9 @@ public class FitnessClass {
      */
     private boolean validTime(Member member){
         ClassSchedule schedule = GymManager.getSchedule();
+        if(schedule == null){
+            return true;
+        }
         FitnessClass[] classes = schedule.sameTimeClasses(this);
         for(int i=0; i<classes.length; i++){
             if(classes[i].contains(member)){

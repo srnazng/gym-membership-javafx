@@ -192,4 +192,14 @@ public class ClassSchedule {
         classCopy[numClasses - 1] = fitClass;
         classes = classCopy;
     }
+
+    public FitnessClass toClass(String fitclass){
+        for(int i=0; i<numClasses; i++){
+            if(classes[i].toSimpleString().equalsIgnoreCase(fitclass)){
+                return classes[i];
+            }
+        }
+        return null;
+    }
+
 }
