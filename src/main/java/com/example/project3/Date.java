@@ -69,6 +69,13 @@ public class Date implements Comparable<Date> {
         this.year = Integer.parseInt(dateParts[INDEX_2]);
     }
 
+    /**
+     * Creates a new Date object given a date represented by a
+     * String with specified delimiter
+     *
+     * @param date          Date represented as a String
+     * @param delimiter     delimiter character
+     */
     public Date(String date, String delimiter) {
         String[] dateParts = date.split(delimiter, 0);
         if (dateParts.length < DATE_NUM_PARTS) {

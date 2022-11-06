@@ -97,7 +97,7 @@ public class FitnessClass {
 
 
     /**
-     * Converts object to a String containing name of the class,
+     * Converts object to a String object containing name of the class,
      * instructor name, time of the class, and a list of participants
      * @return Fitness class formatted as a String
      */
@@ -111,6 +111,11 @@ public class FitnessClass {
         return toReturn + "\n";
     }
 
+    /**
+     * Converts FitnessClass to String object containing name of the class,
+     * instructor name, time of the class
+     * @return  Fitness class formatted as a String
+     */
     public String toSimpleString(){
         return name.toUpperCase() + " - " + instructor.toUpperCase() + ", " + time.getTime()
                 + ", " + location.name().toUpperCase() + "\n";
@@ -197,7 +202,7 @@ public class FitnessClass {
      * @return true if no time conflict, false if there is a time conflict
      */
     private boolean validTime(Member member){
-        ClassSchedule schedule = GymManager.getSchedule();
+        ClassSchedule schedule = GymManagerController.getSchedule();
         if(schedule == null){
             return true;
         }

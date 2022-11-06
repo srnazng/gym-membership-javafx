@@ -11,6 +11,13 @@ package com.example.project3;
 public class Family extends Member {
     protected int remainingGuestPasses;
 
+    /**
+     * Creates a member object with all fields completed
+     * @param fname     first name
+     * @param lname     last name
+     * @param dob       date of birth
+     * @param location  location of member's gym
+     */
     public Family(String fname, String lname, Date dob, Location location) {
         super(fname, lname, dob, location);
         this.remainingGuestPasses = 1;

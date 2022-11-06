@@ -1,7 +1,7 @@
 package com.example.project3;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
+
 /**
  * The Schedule class manages all the fitness classes at the gym. Schedule contains a list of
  * all the fitness classes and includes methods to detect time conflicts, check if a class
@@ -40,7 +40,7 @@ public class ClassSchedule {
 
     /**
      * Gets string representing all classes in the schedule
-     * @return
+     * @return formatted string containing list of classes in schedule
      */
     public String printClasses(){
         String returnString = "";
@@ -123,6 +123,10 @@ public class ClassSchedule {
         return classList;
     }
 
+    /**
+     * Get list of fitness classes at all gym locations
+     * @return  list of all FitnessClass objects
+     */
     public FitnessClass[] getClassList(){
         return classes;
     }
@@ -180,22 +184,13 @@ public class ClassSchedule {
     }
 
     /**
-     * Adds a fitness class to the class schedule
-     * @param fitClass fitness class to the added
+     * Convert String of fitness class to actual FitnessClass object
+     * @param fitClass  String version of fitness class
+     * @return  FitnessClass object corresponding to fitClass String
      */
-    public void addClass(FitnessClass fitClass){
-        numClasses++;
-        FitnessClass[] classCopy = new FitnessClass[numClasses];
-        for (int i = 0; i < numClasses - 1; i++){
-            classCopy[i] = classes[i];
-        }
-        classCopy[numClasses - 1] = fitClass;
-        classes = classCopy;
-    }
-
-    public FitnessClass toClass(String fitclass){
+    public FitnessClass toClass(String fitClass){
         for(int i=0; i<numClasses; i++){
-            if(classes[i].toSimpleString().equalsIgnoreCase(fitclass)){
+            if(classes[i].toSimpleString().equalsIgnoreCase(fitClass)){
                 return classes[i];
             }
         }

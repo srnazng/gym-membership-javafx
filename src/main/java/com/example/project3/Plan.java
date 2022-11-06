@@ -7,6 +7,11 @@ package com.example.project3;
 public enum Plan {
     STANDARD, FAMILY, PREMIUM;
 
+    /**
+     * Convert name of plan as a String to Plan object
+     * @param plan_name     Name of plan as a String object
+     * @return              Plan object corresponding to plan_name
+     */
     public static Plan toPlan(String plan_name){
         if(plan_name.equalsIgnoreCase(FAMILY.name())){
             return FAMILY;

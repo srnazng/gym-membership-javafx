@@ -97,8 +97,8 @@ public class MemberDatabase {
 
     /**
      * If there are no members, a message indicating database is empty is printed.
-     * Otherwise, a list of members and their fees is returned without sorting.
-     * @return string representing list of members
+     * Otherwise, a list of members and their first bill fees is returned without sorting.
+     * @return string representing list of members with fee info
      */
     public String printWithFees() {
         if(size < 1){
@@ -108,6 +108,11 @@ public class MemberDatabase {
                 + print(true, true) + "-end of list-\n\n";
     }
 
+    /**
+     * If there are no members, a message indicating database is empty is printed.
+     * Otherwise, a list of members and their second bill fees is returned without sorting.
+     * @return string representing list of members with fee info
+     */
     public String printWithSecondFees() {
         if(size < 1){
             return "Member database is empty!\n";
@@ -118,10 +123,11 @@ public class MemberDatabase {
 
     /**
      * Print the members in the database (without headers)
-     * @param includeFees whether or not to include the fees
+     * @param includeFees   whether to include the fees
+     * @param firstFee      whether fee is first time payment
      * @return string representing list of members
      */
-    private String print(boolean includeFees, boolean firstFee){
+    public String print(boolean includeFees, boolean firstFee){
         String returnString = "";
         for (int i = 0; i < size; i++){
             String memberInfo = mlist[i].toString();
