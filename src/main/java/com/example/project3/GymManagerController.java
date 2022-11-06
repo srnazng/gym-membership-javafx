@@ -61,7 +61,7 @@ public class GymManagerController{
             return;
         }
         if(database.add(member)){
-            messageArea.appendText(member.getFname() + " " + member.getLname() + " added.");
+            messageArea.appendText(member.getFname() + " " + member.getLname() + " added.\n");
             membership_fname.setText("");
             membership_lname.setText("");
             membership_dob.setValue(null);
@@ -70,10 +70,10 @@ public class GymManagerController{
     }
 
     @FXML
-    void checkInClass(){
+    void dropClass(){
         String fname = fitclass_fname.getText();
         String lname = fitclass_lname.getText();
-        if(fname.isEmpty() || lname.isEmpty() || fitclass_dob.getValue() == null){
+        if(fname.isEmpty() || lname.isEmpty() || fitclass_dob.getValue() == null || fitclass_classes.getValue() == null){
             messageArea.appendText("Field cannot be empty.\n");
             return;
         }
@@ -82,8 +82,40 @@ public class GymManagerController{
             messageArea.appendText("DOB " + dob + ": invalid calendar date!\n");
             return;
         }
-        FitnessClass fitclass = schedule.toClass(fitclass_classes.getValue().toString());
-        if(fitclass == null){
+        FitnessClass fitClass = schedule.toClass(fitclass_classes.getValue().toString());
+        if(fitClass == null){
+            messageArea.appendText("Class does not exist\n");
+            return;
+        }
+        Member member = database.getMember(new Member(fname, lname, dob));
+        if (member == null) {
+            messageArea.appendText(fname + " " + lname + " " + dob + " is not in the database.\n");
+            return;
+        }
+        if (member.getExpire().isPast()) {
+            messageArea.appendText(fname + " " + lname + " " + dob + " membership expired.");
+            return;
+        }
+        boolean isGuest = fitclass_is_guest.isSelected();
+        if(isGuest) { messageArea.appendText(fitClass.dropGuestClass(member)); }
+        else{ messageArea.appendText(fitClass.dropClass(member)); }
+    }
+
+    @FXML
+    void checkInClass(){
+        String fname = fitclass_fname.getText();
+        String lname = fitclass_lname.getText();
+        if(fname.isEmpty() || lname.isEmpty() || fitclass_dob.getValue() == null || fitclass_classes.getValue() == null){
+            messageArea.appendText("Field cannot be empty.\n");
+            return;
+        }
+        Date dob = new Date(fitclass_dob.getValue().toString(), "-");
+        if(!dob.isValid()) {
+            messageArea.appendText("DOB " + dob + ": invalid calendar date!\n");
+            return;
+        }
+        FitnessClass fitClass = schedule.toClass(fitclass_classes.getValue().toString());
+        if(fitClass == null){
             messageArea.appendText("Class does not exist\n");
             return;
         }
@@ -99,14 +131,14 @@ public class GymManagerController{
         boolean isGuest = fitclass_is_guest.isSelected();
 
         String message;
-        if (isGuest) message = fitclass.addGuest(member);
-        else message = fitclass.add(member);
+        if (isGuest) message = fitClass.addGuest(member);
+        else message = fitClass.add(member);
 
         messageArea.appendText(message);
 
-        if (fitclass.getLastAddSuccessful()){
-            messageArea.appendText(fitclass.getClassMemberList());
-            messageArea.appendText(fitclass.getClassGuestList());
+        if (fitClass.getLastAddSuccessful()){
+            messageArea.appendText(fitClass.getClassMemberList());
+            messageArea.appendText(fitClass.getClassGuestList());
         }
     }
 
@@ -127,8 +159,13 @@ public class GymManagerController{
     }
 
     @FXML
-    void printMembersWithFees(ActionEvent event){
+    void printMembersFirstFee(ActionEvent event){
         messageArea.appendText(database.printWithFees());
+    }
+
+    @FXML
+    void printMembersSecondFee(ActionEvent event){
+        messageArea.appendText(database.printWithSecondFees());
     }
 
     @FXML

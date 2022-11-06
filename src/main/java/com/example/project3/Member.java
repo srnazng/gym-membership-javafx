@@ -109,7 +109,7 @@ public class Member implements Comparable<Member>{
      * @return fee of member as a double
      */
     public double membershipFee() {
-        return Constants.STANDARD_FEE + Constants.ONE_TIME_FEE;
+        return Constants.STANDARD_FEE;
     }
 
     /**

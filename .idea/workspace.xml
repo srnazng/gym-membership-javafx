@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="updates">
+    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="check in">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/ClassSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/ClassSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Family.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Family.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/FitnessClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/FitnessClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/MemberDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/MemberDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" afterDir="false" />
     </list>
     <list id="4a2919e5-70c2-462c-a64d-d63ba2dee581" name="Changes by Jackson" comment="" />
@@ -55,8 +57,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Member" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.project3.Member" />
+      <module name="project3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.project3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Member" />
         <item itemvalue="Application.GymManagerMain" />
       </list>
     </recent_temporary>
@@ -77,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667515003651</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="check in">
+      <created>1667590237450</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667590237451</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +116,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates" />
+    <MESSAGE value="check in" />
+    <option name="LAST_COMMIT_MESSAGE" value="check in" />
   </component>
 </project>

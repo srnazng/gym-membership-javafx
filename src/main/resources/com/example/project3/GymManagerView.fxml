@@ -83,7 +83,7 @@
                        </children>
                    </GridPane>
                    <Button layoutX="204.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" onAction="#checkInClass" text="Check In" textAlignment="CENTER" />
-                   <Button layoutX="321.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" text="Drop" textAlignment="CENTER" />
+                   <Button layoutX="321.0" layoutY="323.0" minWidth="90.0" mnemonicParsing="false" onAction="#dropClass" text="Drop" textAlignment="CENTER" />
                </children>
            </AnchorPane>
          </content>
@@ -109,8 +109,8 @@
                          </Menu>
                          <Menu text="Membership Fee">
                              <items>
-                                 <MenuItem onAction="#printMembersWithFees" text="First bill" />
-                                 <MenuItem text="Next bill" />
+                                 <MenuItem onAction="#printMembersFirstFee" text="First bill" />
+                                 <MenuItem onAction="#printMembersSecondFee" text="Next bill" />
                              </items>
                          </Menu>
                      </MenuBar>

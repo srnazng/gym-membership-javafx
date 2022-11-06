@@ -22,7 +22,7 @@ public class Family extends Member {
      */
     @Override
     public double membershipFee(){
-        return Constants.FAMILY_FEE + Constants.ONE_TIME_FEE;
+        return Constants.FAMILY_FEE;
     }
 
     /**

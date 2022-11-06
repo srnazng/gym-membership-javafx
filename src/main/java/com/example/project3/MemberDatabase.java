@@ -3,8 +3,7 @@ package com.example.project3;
 import java.io.File;
 import java.util.Scanner;
 
-import static com.example.project3.Constants.NOT_FOUND;
-import static com.example.project3.Constants.decimalFormat;
+import static com.example.project3.Constants.*;
 
 /**
  * The MemberDatabase class contains a list of all the members of the gym,
@@ -93,7 +92,7 @@ public class MemberDatabase {
             return "Member database is empty!\n";
         }
         return "\n-list of members-\n"
-                + print(false) + "-end of list-\n\n";
+                + print(false, false) + "-end of list-\n\n";
     }
 
     /**
@@ -106,7 +105,15 @@ public class MemberDatabase {
             return "Member database is empty!\n";
         }
         return "\n-list of members with membership fees-\n"
-                + print(true) + "-end of list-\n\n";
+                + print(true, true) + "-end of list-\n\n";
+    }
+
+    public String printWithSecondFees() {
+        if(size < 1){
+            return "Member database is empty!\n";
+        }
+        return "\n-list of members with membership fees-\n"
+                + print(true, false) + "-end of list-\n\n";
     }
 
     /**
@@ -114,12 +121,17 @@ public class MemberDatabase {
      * @param includeFees whether or not to include the fees
      * @return string representing list of members
      */
-    private String print(boolean includeFees){
+    private String print(boolean includeFees, boolean firstFee){
         String returnString = "";
         for (int i = 0; i < size; i++){
             String memberInfo = mlist[i].toString();
             if(includeFees){
-                memberInfo = memberInfo + ", Membership fee: $" + decimalFormat.format(mlist[i].membershipFee());
+                if(firstFee && !(mlist[i] instanceof Premium)){
+                    memberInfo = memberInfo + ", Membership fee: $" + decimalFormat.format(mlist[i].membershipFee() + ONE_TIME_FEE);
+                }
+                else{
+                    memberInfo = memberInfo + ", Membership fee: $" + decimalFormat.format(mlist[i].membershipFee());
+                }
             }
             returnString += memberInfo + "\n";
         }

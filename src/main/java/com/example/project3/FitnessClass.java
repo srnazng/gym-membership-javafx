@@ -246,10 +246,10 @@ public class FitnessClass {
      */
     public String dropClass(Member member){
         if(!contains(member)){
-            return member.getFname() + " " + member.getLname() + " did not check in.";
+            return member.getFname() + " " + member.getLname() + " did not check in.\n";
         }
         checkedInMembers.remove(member);
-        return member.getFname() + " " + member.getLname() + " done with the class.";
+        return member.getFname() + " " + member.getLname() + " done with the class.\n";
     }
 
     /**
@@ -263,7 +263,7 @@ public class FitnessClass {
         }
         checkedInGuests.remove(member);
         ((Family) member).incrementGuestPass();
-        return member.getFname() + " " + member.getLname() + " Guest done with the class.";
+        return member.getFname() + " " + member.getLname() + " Guest done with the class.\n";
     }
 
     /**
