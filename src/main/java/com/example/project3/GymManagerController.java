@@ -35,8 +35,8 @@ public class GymManagerController{
      */
     @FXML
     void onAddMembershipClick() {
-        String fname = membership_fname.getText();
-        String lname = membership_lname.getText();
+        String fname = membership_fname.getText().replaceAll("\\s", "");
+        String lname = membership_lname.getText().replaceAll("\\s", "");
         if(fname.isEmpty() || lname.isEmpty() || membership_dob.getValue() == null){
             messageArea.appendText("Field cannot be empty.\n");
             return;
@@ -45,7 +45,8 @@ public class GymManagerController{
             messageArea.appendText("Invalid location.\n");
             return;
         }
-        Date dob = new Date(membership_dob.getValue().toString(), "-");
+        Date dob = new Date(membership_dob.getEditor().getText());
+
         Location loc = toLocation(membership_loc.getValue().toString());
         Plan membershipType = Plan.toPlan(membership.selectedToggleProperty()
                 .getValue().toString().split("'")[1]);
@@ -76,15 +77,15 @@ public class GymManagerController{
      */
     @FXML
     void onRemoveMembershipClick(){
-        String fname = membership_fname.getText();
-        String lname = membership_lname.getText();
+        String fname = membership_fname.getText().replaceAll("\\s", "");
+        String lname = membership_lname.getText().replaceAll("\\s", "");
 
         if(fname.isEmpty() || lname.isEmpty() || membership_dob.getValue() == null){
             messageArea.appendText("Field cannot be empty.\n");
             return;
         }
 
-        Date dob = new Date(membership_dob.getValue().toString(), "-");
+        Date dob = new Date(membership_dob.getEditor().getText());
 
         String error = checkBirthdayErrors(dob);
         if(error != null){
@@ -118,7 +119,7 @@ public class GymManagerController{
             messageArea.appendText("Field cannot be empty.\n");
             return;
         }
-        Date dob = new Date(fitclass_dob.getValue().toString(), "-");
+        Date dob = new Date(fitclass_dob.getEditor().getText());
         if(!dob.isValid()) {
             messageArea.appendText("DOB " + dob + ": invalid calendar date!\n");
             return;
@@ -165,7 +166,7 @@ public class GymManagerController{
             messageArea.appendText("Field cannot be empty.\n");
             return;
         }
-        Date dob = new Date(fitclass_dob.getValue().toString(), "-");
+        Date dob = new Date(fitclass_dob.getEditor().getText());
         if(!dob.isValid()) {
             messageArea.appendText("DOB " + dob + ": invalid calendar date!\n");
             return;
@@ -287,6 +288,16 @@ public class GymManagerController{
                 FRANKLIN.name(), PISCATAWAY.name(), SOMERVILLE.name()};
         membership_loc.setItems(FXCollections.observableArrayList(locationList));
         updateClassInput();
+        membership_dob.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue){
+                membership_dob.setValue(membership_dob.getConverter().fromString(membership_dob.getEditor().getText()));
+            }
+        });
+        fitclass_dob.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue){
+                fitclass_dob.setValue(fitclass_dob.getConverter().fromString(fitclass_dob.getEditor().getText()));
+            }
+        });
     }
 
     /**

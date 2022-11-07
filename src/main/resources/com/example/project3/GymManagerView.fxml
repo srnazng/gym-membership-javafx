@@ -32,7 +32,7 @@
                            <Label text="Last Name" GridPane.rowIndex="1" />
                            <TextField fx:id="membership_lname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                             <Label text="Date of Birth" GridPane.rowIndex="2" />
-                           <DatePicker fx:id="membership_dob" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <DatePicker fx:id="membership_dob" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            <Label text="Location" GridPane.rowIndex="3" />
                            <ComboBox fx:id="membership_loc" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            <Label text="Membership Type" GridPane.rowIndex="4" />
@@ -81,7 +81,7 @@
                            <Label text="Last Name" GridPane.rowIndex="1" />
                            <TextField fx:id="fitclass_lname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            <Label text="Date of Birth" GridPane.rowIndex="2" />
-                           <DatePicker fx:id="fitclass_dob" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <DatePicker fx:id="fitclass_dob" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            <Label text="Fitness Class" GridPane.rowIndex="3" />
                            <ComboBox fx:id="fitclass_classes" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            <CheckBox fx:id="fitclass_is_guest" mnemonicParsing="false" text="Guest" GridPane.columnIndex="1" GridPane.rowIndex="4" />

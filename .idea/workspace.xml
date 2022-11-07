@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="drop class">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="javadoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/ClassSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/ClassSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Family.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Family.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/FitnessClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/FitnessClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/MemberDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/MemberDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Plan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/RunProject1.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project3/GymManagerView.fxml" afterDir="false" />
     </list>
     <list id="4a2919e5-70c2-462c-a64d-d63ba2dee581" name="Changes by Jackson" comment="" />
@@ -114,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667701786061</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="javadoc">
+      <created>1667712032973</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667712032973</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +128,7 @@
     <MESSAGE value="updates" />
     <MESSAGE value="check in" />
     <MESSAGE value="drop class" />
-    <option name="LAST_COMMIT_MESSAGE" value="drop class" />
+    <MESSAGE value="javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="javadoc" />
   </component>
 </project>
