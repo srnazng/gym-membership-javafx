@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="better datepicker">
+    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="edits">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/tests/DateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/tests/PremiumTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/FitnessClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/FitnessClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/GymManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <list id="4a2919e5-70c2-462c-a64d-d63ba2dee581" name="Changes by Jackson" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -37,13 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jackson/IdeaProjects/gym-membership-javafx/src/input&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "last_opened_file_path": "C:/Users/Jackson/IdeaProjects/gym-membership-javafx/src/input"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jackson\IdeaProjects\gym-membership-javafx\src\input" />
@@ -51,8 +54,27 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/example/project3" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.project3.tests" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.DateTest.testMonthRange">
+    <configuration name="Date" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.project3.Date" />
+      <module name="project3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.project3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GymManagerMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.project3.GymManagerMain" />
       <module name="project3" />
@@ -66,22 +88,75 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Member" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.project3.Member" />
+    <configuration name="DateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.project3.*" />
+          <option name="PATTERN" value="com.example.project3.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.example.project3.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.project3.tests.DateTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DateTest.testMonthRange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.project3.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.project3.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.project3.tests.DateTest" />
+      <option name="METHOD_NAME" value="testMonthRange" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PremiumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.project3.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.project3.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.project3.tests.PremiumTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PremiumTest.testPremiumFee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.project3.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.project3.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.project3.tests.PremiumTest" />
+      <option name="METHOD_NAME" value="testPremiumFee" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Member" />
+        <item itemvalue="JUnit.DateTest.testMonthRange" />
+        <item itemvalue="JUnit.DateTest" />
+        <item itemvalue="Application.Date" />
+        <item itemvalue="JUnit.PremiumTest.testPremiumFee" />
+        <item itemvalue="JUnit.PremiumTest" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667789735360</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="edits">
+      <created>1667798892606</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667798892607</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +231,7 @@
     <MESSAGE value="drop class" />
     <MESSAGE value="javadoc" />
     <MESSAGE value="better datepicker" />
-    <option name="LAST_COMMIT_MESSAGE" value="better datepicker" />
+    <MESSAGE value="edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="edits" />
   </component>
 </project>
