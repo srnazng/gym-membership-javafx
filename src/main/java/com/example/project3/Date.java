@@ -70,30 +70,6 @@ public class Date implements Comparable<Date> {
     }
 
     /**
-     * Creates a new Date object given a date represented by a
-     * String with specified delimiter
-     *
-     * @param date          Date represented as a String
-     * @param delimiter     delimiter character
-     */
-    public Date(String date, String delimiter) {
-        String[] dateParts = date.split(delimiter, 0);
-        if (dateParts.length < DATE_NUM_PARTS) {
-            return;
-        }
-        if(delimiter.equalsIgnoreCase("-")){
-            this.month = Integer.parseInt(dateParts[INDEX_1]);
-            this.day = Integer.parseInt(dateParts[INDEX_2]);
-            this.year = Integer.parseInt(dateParts[INDEX_0]);
-        }
-        else{
-            this.month = Integer.parseInt(dateParts[INDEX_0]);
-            this.day = Integer.parseInt(dateParts[INDEX_1]);
-            this.year = Integer.parseInt(dateParts[INDEX_2]);
-        }
-    }
-
-    /**
      * Create new Date object given a Calendar object
      * @param calDate Calendar containing year, month, and day of new Date
      */

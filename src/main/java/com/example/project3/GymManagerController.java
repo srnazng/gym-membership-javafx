@@ -113,8 +113,8 @@ public class GymManagerController{
      */
     @FXML
     void onCheckInClassClick(){
-        String fname = fitclass_fname.getText();
-        String lname = fitclass_lname.getText();
+        String fname = fitclass_fname.getText().replaceAll("\\s", "");;
+        String lname = fitclass_lname.getText().replaceAll("\\s", "");;
         if(fname.isEmpty() || lname.isEmpty() || fitclass_dob.getValue() == null || fitclass_classes.getValue() == null){
             messageArea.appendText("Field cannot be empty.\n");
             return;
@@ -135,7 +135,7 @@ public class GymManagerController{
             return;
         }
         if (member.getExpire().isPast()) {
-            messageArea.appendText(fname + " " + lname + " " + dob + " membership expired.");
+            messageArea.appendText(fname + " " + lname + " " + dob + " membership expired.\n");
             return;
         }
         boolean isGuest = fitclass_is_guest.isSelected();
@@ -160,8 +160,8 @@ public class GymManagerController{
      */
     @FXML
     void onDropClassClick(){
-        String fname = fitclass_fname.getText();
-        String lname = fitclass_lname.getText();
+        String fname = fitclass_fname.getText().replaceAll("\\s", "");;
+        String lname = fitclass_lname.getText().replaceAll("\\s", "");;
         if(fname.isEmpty() || lname.isEmpty() || fitclass_dob.getValue() == null || fitclass_classes.getValue() == null){
             messageArea.appendText("Field cannot be empty.\n");
             return;

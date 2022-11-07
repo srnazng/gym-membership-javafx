@@ -193,7 +193,7 @@ public class FitnessClass {
         lastAddSuccessful = true;
         checkedInMembers.add(member);
         return fname + " " + lname + " checked in " + name.toUpperCase() + " - " +
-                instructor.toUpperCase() + ", " + time.getTime() + ", " + location.name() + "\n";
+                instructor.toUpperCase() + ", " + time.getTime() + ", " + location.name();
     }
 
     /**
@@ -240,7 +240,7 @@ public class FitnessClass {
         ((Family) member).useGuestPass();
         checkedInGuests.add(member);
         return fname + " " + lname + " (guest) checked in " + name.toUpperCase() + " - " +
-                instructor.toUpperCase() + ", " + time.getTime() + ", " + location.name() + "\n";
+                instructor.toUpperCase() + ", " + time.getTime() + ", " + location.name();
     }
 
     /**
@@ -264,7 +264,7 @@ public class FitnessClass {
      */
     public String dropGuestClass(Member member){
         if(!containsGuest(member)){
-            return member.getFname() + " " + member.getLname() + " Guest did not check in.\n";
+            return member.getFname() + " " + member.getLname() + " (Guest) did not check in.\n";
         }
         checkedInGuests.remove(member);
         ((Family) member).incrementGuestPass();
