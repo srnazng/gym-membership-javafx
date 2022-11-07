@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="edits">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/tests/DateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/tests/PremiumTest.java" afterDir="false" />
+    <list default="true" id="6bd10dba-8b84-4155-bb88-544b604acc43" name="Changes" comment="tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project3/tests/DateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project3/tests/DateTest.java" afterDir="false" />
     </list>
     <list id="4a2919e5-70c2-462c-a64d-d63ba2dee581" name="Changes by Jackson" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,17 +54,20 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.project3" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.example.project3.tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DateTest.testMonthRange">
+  <component name="RunManager">
     <configuration name="Date" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.project3.Date" />
       <module name="project3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.project3.*" />
+          <option name="PATTERN" value="com.example.project3.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -80,7 +80,7 @@
       <module name="project3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.project3.*" />
+          <option name="PATTERN" value="com.example.project3.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DateTest.testMonthRange" />
         <item itemvalue="JUnit.DateTest" />
+        <item itemvalue="JUnit.DateTest.testMonthRange" />
         <item itemvalue="Application.Date" />
         <item itemvalue="JUnit.PremiumTest.testPremiumFee" />
         <item itemvalue="JUnit.PremiumTest" />
@@ -211,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667798892607</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="tests">
+      <created>1667853978112</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667853978112</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,6 +239,7 @@
     <MESSAGE value="javadoc" />
     <MESSAGE value="better datepicker" />
     <MESSAGE value="edits" />
-    <option name="LAST_COMMIT_MESSAGE" value="edits" />
+    <MESSAGE value="tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests" />
   </component>
 </project>
